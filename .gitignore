@@ -1,0 +1,17 @@
+# Environment / secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Frontend build
+frontend/dist/
+
+# Local files
+*.tgz
