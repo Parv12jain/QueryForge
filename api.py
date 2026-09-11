@@ -1,6 +1,5 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from langchain_google_genai.chat_models import GoogleRateLimitError
 from pydantic import BaseModel,Field
 from graph import graph
 from typing import Any
