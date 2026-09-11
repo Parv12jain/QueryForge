@@ -21,7 +21,7 @@ app = FastAPI(
 )
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["https://queryforge-1.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -211,11 +211,13 @@ def query_database(request: QueryRequest):
             "error": result.get("error", ""),
         }
 
-    except GoogleRateLimitError:
-        raise HTTPException(
-            status_code=429,
-            detail="Gemini API quota exceeded. Please try again after the quota resets."
-        )
+    except Exception as e:
+        if "429" in str(e) or "quota" in str(e).lower() or "rate limit" in str(e).lower():
+            raise HTTPException(
+                status_code=429,
+                detail="Gemini API quota exceeded. Please try again after the quota resets."
+            )
+        raise
 
     except Exception:
         raise HTTPException(
