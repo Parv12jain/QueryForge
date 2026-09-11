@@ -107,7 +107,11 @@ def test_connection(request: ConnectionRequest):
             "connection_id": connection_id,
         }
 
-    except Exception:
+    except Exception as e:
+        print(
+            f"DATABASE CONNECTION FAILED: "
+            f"{type(e).__name__}: {e}"
+        )
         raise HTTPException(
             status_code=400,
             detail="Could not connect to the database. Check the connection details."
