@@ -55,7 +55,7 @@ function App() {
     setResponse(null);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/query", {
+      const res = await fetch("https://queryforge-wiqi.onrender.com/query", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -254,7 +254,7 @@ const resultTypeDescription = {
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:8000/connection/schema",
+        "https://queryforge-wiqi.onrender.com/connection/schema",
         {
           method: "POST",
           headers: {
@@ -308,7 +308,7 @@ const resultTypeDescription = {
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:8000/connection/disconnect",
+        "https://queryforge-wiqi.onrender.com/connection/disconnect",
         {
           method: "POST",
           headers: {
@@ -638,7 +638,7 @@ const resultTypeDescription = {
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:8000/connection/test",
+        "https://queryforge-wiqi.onrender.com/connection/test",
         {
           method: "POST",
           headers: {
