@@ -2,7 +2,7 @@ import os
 import json
 
 from dotenv import load_dotenv
-from langchain_mistralai import ChatMistralAI
+
 from langchain_google_genai import ChatGoogleGenerativeAI
 from state import AgentState
 from schema_inspector import get_database_schema
